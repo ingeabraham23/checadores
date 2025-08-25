@@ -1,0 +1,97 @@
+ 
+  .contenedor-chedraui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+
+  .rules-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .rules-table th {
+    background-color: #91ff00;
+    color: #000000;
+    padding: 2px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .rules-table tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rules-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .rules-table td {
+    padding: 2px;
+    font-size: 10px;
+    color: #000000;
+    background-color: lightblue;
+  }
+  
+  .rules-table strong {
+    color: #e53935;
+  }
+
+  .button-descargar {
+    padding: 12px 20px;
+    background-color: #e53935;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button-descargar:hover {
+    background-color: #c62828;
+    transform: translateY(-2px);
+  }
+  
+  .button-descargar:active {
+    transform: translateY(0);
+    background-color: #b71c1c;
+  }
+
+  .tarifa {
+    width: 90%;
+    max-width: 90vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid black;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #e53935;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #c62828;
+  }
+
+  .contenedor-imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }

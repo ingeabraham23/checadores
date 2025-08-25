@@ -1,0 +1,157 @@
+@media only screen and (max-width: 600px) {
+  @font-face {
+    font-family: "ARCO Typography";
+    src: url("../fonts/ARCO.ttf") format("truetype"); /* Ajusta la ruta según la ubicación de tu archivo de fuente */
+    font-weight: normal;
+    font-style: normal;
+  }
+  .contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .tabla-empleo {
+    color: #000;
+  }
+
+  input {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .separador-trafico {
+    text-align: center;
+  }
+
+  .imagen-notificacion {
+    text-align: center;
+  }
+
+  .encabezado-empleo {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #7bfc3f;
+    text-shadow: 1px 1px 1px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 24px;
+    text-align: center;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .fecha-empleo {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #d5ff19;
+    text-shadow: 1px 1px 1px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 15px;
+    text-align: center;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .horario-empleo {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #ffee00;
+    text-shadow: 2px 2px 2px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .requisitos-empleo-encabezado {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #ac53ff;
+    text-shadow: 2px 2px 2px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 26px;
+    text-align: center;
+    padding: 10px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .requisitos-empleo {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .operador-notificacion {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #e5ff00;
+    text-shadow: 3px 3px 3px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .lugar-empleo {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #ff00ff;
+    text-shadow: 2px 2px 2px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 24px;
+    text-align: center;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .contacto-empleo {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #00b7ff;
+    font-size: 20px;
+    text-align: center;
+    padding: 1px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+  
+  .telefono-empleo {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #fbff00;
+    font-size: 32px;
+    text-align: center;
+    padding: 1px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .boton-capturar {
+    background-color: rgb(204, 0, 255); /* Cambia el color de fondo */
+    color: white; /* Cambia el color del texto */
+    padding: 10px; /* Aumenta el espacio alrededor del texto */
+    border: 1px solid #000; /* Elimina el borde */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Agrega una transición */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+  }
+
+  .copyright-notificacion {
+    color: #000000;
+    text-align: center;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,279 @@
+ 
+ @font-face {
+  font-family: "ARCO Typography";
+  src: url("../fonts/ARCO.ttf") format("truetype"); /* Ajusta la ruta según la ubicación de tu archivo de fuente */
+  font-weight: normal;
+  font-style: normal;
+}
+
+  .contenedor-chedraui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+
+  .tabla-areli {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .tabla-areli td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .tabla-areli tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .tabla-areli strong {
+    color: #f1c40f;
+  }
+  
+  .photo-cell {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #f1c40f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .phone-link {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .phone-link:hover {
+    text-decoration: underline;
+  }
+
+  .encabezado-notificacion-turno {
+    /* font-family: "ARCO Typography"; */
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: black;
+    font-size: 10px;
+    text-align: center;
+    padding: 10px;
+
+    /* -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .fecha-notificacion-turno {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: cornflowerblue;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .informe-turno {
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .servidor {
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .horario-turno-de {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: gold;
+    font-size: 24px;
+    text-align: center;
+    padding: 3px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .horario-turno-de-comida {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: rgb(0, 255, 221);
+    font-size: 24px;
+    text-align: center;
+    padding: 3px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .horario-turno-comida {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: rgb(0, 255, 221);
+    font-size: 24px;
+    text-align: center;
+    padding: 3px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .horario-turno {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: rgb(172, 28, 255);
+    font-size: 24px;
+    text-align: center;
+    padding: 3px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .asignacion-turno {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: lightpink;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .horario-turnos {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: lightgreen;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+  .gracias-turno {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: #a7a7a7;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
+
+  .rules-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .rules-table th {
+    background-color: #91ff00;
+    color: #000000;
+    padding: 2px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .rules-table tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rules-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .rules-table td {
+    padding: 2px;
+    font-size: 10px;
+    color: #000000;
+    background-color: lightblue;
+  }
+  
+  .rules-table strong {
+    color: #e53935;
+  }
+
+  .button-descargar {
+    padding: 12px 20px;
+    background-color: #e53935;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button-descargar:hover {
+    background-color: #c62828;
+    transform: translateY(-2px);
+  }
+  
+  .button-descargar:active {
+    transform: translateY(0);
+    background-color: #b71c1c;
+  }
+
+  .tarifa {
+    width: 90%;
+    max-width: 90vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid black;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #e53935;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #c62828;
+  }
+
+  .contenedor-imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
