@@ -36,7 +36,7 @@
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
     color: #7bfc3f;
     text-shadow: 1px 1px 1px #000000; /* Ajusta el sombreado según sea necesario */
-    font-size: 24px;
+    font-size: 14px;
     text-align: center;
 
     -webkit-text-stroke-width: 1px; /* Grosor del contorno */
@@ -48,7 +48,7 @@
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
     color: #d5ff19;
     text-shadow: 1px 1px 1px #000000; /* Ajusta el sombreado según sea necesario */
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
 
     -webkit-text-stroke-width: 1px; /* Grosor del contorno */
@@ -59,8 +59,8 @@
     font-family: "ARCO Typography";
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
     color: #ffee00;
-    text-shadow: 2px 2px 2px #000000; /* Ajusta el sombreado según sea necesario */
-    font-size: 20px;
+    text-shadow: 1px 1px 1px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 12px;
     text-align: center;
     padding: 10px;
 
@@ -72,10 +72,10 @@
     font-family: "ARCO Typography";
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
     color: #ac53ff;
-    text-shadow: 2px 2px 2px #000000; /* Ajusta el sombreado según sea necesario */
-    font-size: 26px;
+    text-shadow: 1px 1px 1px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 12px;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
 
     -webkit-text-stroke-width: 1px; /* Grosor del contorno */
     -webkit-text-stroke-color: #000000; /* Color del contorno */
@@ -103,8 +103,8 @@
     font-family: "ARCO Typography";
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
     color: #ff00ff;
-    text-shadow: 2px 2px 2px #000000; /* Ajusta el sombreado según sea necesario */
-    font-size: 24px;
+    text-shadow: 1px 1px 1px #000000; /* Ajusta el sombreado según sea necesario */
+    font-size: 14px;
     text-align: center;
 
     -webkit-text-stroke-width: 1px; /* Grosor del contorno */
@@ -115,7 +115,7 @@
     font-family: "ARCO Typography";
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
     color: #00b7ff;
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
     padding: 1px;
 
@@ -127,7 +127,7 @@
     font-family: "ARCO Typography";
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
     color: #fbff00;
-    font-size: 32px;
+    font-size: 18px;
     text-align: center;
     padding: 1px;
 

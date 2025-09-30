@@ -93,11 +93,17 @@ function Empleo() {
         <tbody>
           <tr>
             <td className="encabezado-empleo">
-              📢 Anuncio de Empleo: ¡Únete a Nuestro Equipo de Checadores!
+              Únete a Nuestro Equipo de Checadores de Transporte público
             </td>
           </tr>
           <tr>
-            <td className="horario-empleo">{inputs.horario}</td>
+            <td className="requisitos-empleo-encabezado">De lunes a viernes:</td>
+          </tr>
+          <tr>
+            <td className="requisitos-empleo">De 9:00 am a 3:00 pm y de 4:00 pm a 8:30 pm</td>
+          </tr>
+          <tr>
+            <td className="requisitos-empleo">Una hora para comer de 3:00 pm a 4:00 pm</td>
           </tr>
           <tr>
             <td className="requisitos-empleo-encabezado">Requisitos:</td>
@@ -122,7 +128,7 @@ function Empleo() {
           </tr>
           <tr>
             <td className="requisitos-empleo">
-              * Sueldo: ${inputs.sueldo} pesos semanales.
+              * Sueldo por comision: ${inputs.sueldo} aproximados.
             </td>
           </tr>
           <tr>
@@ -156,7 +162,7 @@ function Empleo() {
             </td>
           </tr>
           <tr>
-            <td className="lugar-empleo">Trabajo presencial en Teziutlán.</td>
+            <td className="lugar-empleo">Plaza maravillas.</td>
           </tr>
           <tr>
             <td className="contacto-empleo">
@@ -164,15 +170,12 @@ function Empleo() {
             </td>
           </tr>
           <tr>
-            <td className="telefono-empleo">📞 {inputs.telefono}</td>
+            <td className="telefono-empleo">
+              📞 {inputs.telefono || "231 159 1893"}
+            </td>
           </tr>
         </tbody>
         <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
           <tr>
             <td className="copyright-notificacion">© JoyBoy</td>
           </tr>

@@ -152,6 +152,18 @@
     -webkit-text-stroke-color: #000000; /* Color del contorno */
   }
 
+  .servicio-checadora {
+    font-family: "ARCO Typography";
+    letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+    color: rgb(176, 255, 28);
+    font-size: 16px;
+    text-align: center;
+    padding: 3px;
+
+    -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+    -webkit-text-stroke-color: #000000; /* Color del contorno */
+  }
+
   .asignacion-turno {
     font-family: "ARCO Typography";
     letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */

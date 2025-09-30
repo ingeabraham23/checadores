@@ -9,6 +9,7 @@ import fotohorarios from "/horarios checadores internado.png";
 function Internado() {
   const tablaReglasRef = useRef(null);
   const tablaTurnoRef = useRef(null);
+  const tablaTurno10Ref = useRef(null);
   const tablaTurno2Ref = useRef(null);
 
   function capturarTabla(tabla) {
@@ -127,6 +128,83 @@ function Internado() {
       <div>
         <button
           onClick={() => capturarTabla(tablaTurnoRef.current)}
+          className="button-descargar"
+        >
+          {" "}
+          Descargar Horario Continuo
+        </button>
+      </div>
+      <br></br>
+      <br></br>
+      <table
+        className="tabla-notificacion-turno"
+        ref={tablaTurno10Ref}
+        style={{
+          border: "1px solid #000",
+          borderCollapse: "collapse",
+          width: "100%",
+        }}
+      >
+        <tbody>
+          <tr>
+            <td className="imagen-notificacion">
+              <img
+                src="./notificacion.png"
+                alt="Notificacion"
+                style={{ width: "70px", height: "70px" }}
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td className="encabezado-notificacion-turno">
+              Notificación de Horario de Servicio para el Día de Hoy.
+            </td>
+          </tr>
+          <tr>
+            <td className="fecha-notificacion-turno">{fechaActual}</td>
+          </tr>
+
+          <tr>
+            <td className="informe-turno">
+              Estimados compañeros, Por medio de la presente, se les informa que
+              el día de hoy.
+            </td>
+          </tr>
+
+          <tr>
+            <td className="servicio-checadora">
+              el servicio de checadora en el internado se brindará en:
+            </td>
+          </tr>
+
+          <tr>
+            <td className="horario-turno">
+              horario continuo de 10:00 a.m. a 8:30 p.m.
+            </td>
+          </tr>
+          <tr>
+            <td className="gracias-turno">
+              Gracias por tu atención y comprensión.
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+          <tr>
+            <td className="copyright-notificacion">© JoyBoy</td>
+          </tr>
+          <br></br>
+        </tfoot>
+      </table>
+      <br></br>
+      <div>
+        <button
+          onClick={() => capturarTabla(tablaTurno10Ref.current)}
           className="button-descargar"
         >
           {" "}
