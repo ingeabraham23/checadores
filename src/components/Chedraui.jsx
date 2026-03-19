@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Chedraui.css";
 
 import html2canvas from "html2canvas";
@@ -9,6 +9,7 @@ import fotohorarios from "/horarios checadores chedraui.png";
 
 function Chedraui() {
   const tablaReglasRef = useRef(null);
+  const tablaTurno2Ref = useRef(null);
 
   function capturarTabla(tabla) {
     html2canvas(tabla, { scale: 4 }).then(function (canvas) {
@@ -21,6 +22,30 @@ function Chedraui() {
       document.body.removeChild(downloadLink);
     });
   }
+
+  const fechaActual = new Date().toLocaleDateString("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  const [inputs, setInputs] = useState({
+    nombre: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aquí puedes agregar lógica para guardar los datos, si es necesario
+  };
 
   return (
     <div className="contenedor-chedraui">
@@ -174,6 +199,131 @@ function Chedraui() {
           Descargar Imagen de Horarios
         </a>
       </div>
+
+
+      {/*TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO */}
+      <form onSubmit={handleSubmit}>
+        <label>
+          <select
+            name="nombre"
+            value={inputs.nombre}
+            onChange={handleChange}
+            className="entrada-de-texto"
+          >
+            <option value="">Seleccione un nombre</option>
+            <option value="Areli Dionisio Rodrigo">
+              Areli Dionisio Rodrigo
+            </option>
+            <option value="Mario Ivan Santos Belen">
+              Mario Ivan Santos Belen
+            </option>
+            <option value="Uriel Hernandez Ramirez">
+              Uriel Hernandez Ramirez
+            </option>
+            <option value="Marcos Hernandez Ramirez">
+              Marcos Hernandez Ramirez
+            </option>
+            <option value="Abraham Cabrera Benito">
+              Abraham Cabrera Benito
+            </option>
+          </select>
+        </label>
+        {/* Input para subir la imagen */}
+        <button type="submit">Agregar</button>
+      </form>
+      <table
+        className="tabla-notificacion-turno"
+        ref={tablaTurno2Ref}
+        style={{
+          border: "1px solid #000",
+          borderCollapse: "collapse",
+          width: "100%",
+        }}
+      >
+        <tbody>
+          <tr>
+            <td className="imagen-notificacion">
+              <img
+                src="./notificacion.png"
+                alt="Notificacion"
+                style={{ width: "50px", height: "50px" }}
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td className="encabezado-notificacion-turno">
+              Notificación de Horario de Servicio de checador en Chedraui.
+            </td>
+          </tr>
+          <tr>
+            <td className="fecha-notificacion-turno">{fechaActual}</td>
+          </tr>
+
+          <tr>
+            <td className="informe-turno">
+              Estimados compañeros, Por medio de la presente, se les informa que
+              a partir de hoy martes 04 de noviembre de 2025 el servicio se dara:
+            </td>
+          </tr>
+
+          <tr><td className="servidor">{inputs.nombre}</td></tr>
+
+          <tr>
+            <td className="horario-turnos">
+              En horario segmentado de la siguiente manera:
+            </td>
+          </tr>
+          <tr>
+            <td className="horario-turno-de">Primer turno de:</td>
+          </tr>
+          <tr>
+            <td className="horario-turno">9:30 a.m. a 3:30 p.m.</td>
+          </tr>
+          <tr>
+            <td className="horario-turno-de-comida">Receso para comida de:</td>
+          </tr>
+          <tr>
+            <td className="horario-turno-comida">3:30 p.m. a 4:30 p.m.</td>
+          </tr>
+          <tr>
+            <td className="horario-turno-de">Segundo turno de:</td>
+          </tr>
+          <tr>
+            <td className="horario-turno">4:30 p.m. a 8:30 p.m.</td>
+          </tr>
+
+          <tr>
+            <td className="gracias-turno">
+              Gracias por tu atención y comprensión.
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+          <tr>
+            <td className="copyright-notificacion">© JoyBoy</td>
+          </tr>
+          <br></br>
+        </tfoot>
+      </table>
+      <br></br>
+      <div>
+        <button
+          onClick={() => capturarTabla(tablaTurno2Ref.current)}
+          className="button-descargar"
+        >
+          {" "}
+          Descargar Horario Segmentado
+        </button>
+      </div>
+      <br></br>
+      <br></br>
+
     </div>
   );
 }

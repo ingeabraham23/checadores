@@ -48,6 +48,19 @@
       -webkit-text-stroke-width: 1px; /* Grosor del contorno */
       -webkit-text-stroke-color: #000000; /* Color del contorno */
     }
+
+    .encabezado-notificacion-no-servicio {
+      font-family: "ARCO Typography";
+      letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      color: #ff0000;
+      text-shadow: 3px 3px 3px #000000; /* Ajusta el sombreado según sea necesario */
+      font-size: 25px;
+      text-align: center;
+      padding: 10px;
+  
+      -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+      -webkit-text-stroke-color: #000000; /* Color del contorno */
+    }
   
     .fecha-notificacion {
       font-family: "ARCO Typography";
@@ -60,6 +73,57 @@
   
       -webkit-text-stroke-width: 1px; /* Grosor del contorno */
       -webkit-text-stroke-color: #000000; /* Color del contorno */
+    }
+
+    .fecha-servicio-notificacion {
+      font-family: "ARCO Typography";
+      letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      color: #5eff00;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+  
+      -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+      -webkit-text-stroke-color: #000000; /* Color del contorno */
+    }
+
+    .por-medio-notificacion {
+      font-family: "ARCO Typography";
+      letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      color: #00a2ff;
+      font-size: 12px;
+      text-align: center;
+      -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+      -webkit-text-stroke-color: #000000; /* Color del contorno */
+    }
+
+    .no-se-contara-notificacion {
+      /*letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      font-family: "ARCO Typography";
+      letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      color: #ff4c4c;
+      font-size: 20px;
+      text-align: center;
+      -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+      -webkit-text-stroke-color: #000000; /* Color del contorno */
+    }
+
+    .lugar {
+      /*letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      font-family: "ARCO Typography";
+      letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      color: #a1ff27;
+      font-size: 24px;
+      text-align: center;
+      -webkit-text-stroke-width: 1px; /* Grosor del contorno */
+      -webkit-text-stroke-color: #000000; /* Color del contorno */
+    }
+
+    .motivos-notificacion {
+      /*letter-spacing: 2px; /* Ajusta el espaciado según sea necesario */
+      color: #000000;
+      font-size: 12px;
+      text-align: center;
     }
   
   

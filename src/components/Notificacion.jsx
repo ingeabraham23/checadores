@@ -13,6 +13,8 @@ function Notificacion() {
     nombre: "",
     numero: "",
     deuda: "",
+    fecha: "",
+    lugar: "",
   });
 
   const handleChange = (e) => {
@@ -29,11 +31,11 @@ function Notificacion() {
   };
 
   function capturarTabla(tabla) {
-    html2canvas(tabla, { scale: 4 }).then(function (canvas) {
+    html2canvas(tabla, { scale: 6 }).then(function (canvas) {
       const pngUrl = canvas.toDataURL("image/png");
       const downloadLink = document.createElement("a");
       downloadLink.href = pngUrl;
-      downloadLink.download = `Se busca.png`;
+      downloadLink.download = `notificacion.png`;
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
@@ -164,6 +166,145 @@ function Notificacion() {
           </tr>
         </tfoot>
       </table>
+      <button
+        className="boton-capturar"
+        onClick={() => capturarTabla(tablaRef.current)}
+      >
+        Capturar
+      </button>
+
+
+
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input
+            type="text"
+            name="fecha"
+            placeholder="Fecha:"
+            value={inputs.fecha}
+            onChange={handleChange}
+          />
+        </label>
+
+        <label>
+          <input
+            type="text"
+            name="lugar"
+            placeholder="Lugar:"
+            value={inputs.lugar}
+            onChange={handleChange}
+          />
+        </label>
+      </form>
+
+      <table
+        className="tabla-notificacion"
+        ref={tablaRef}
+        style={{
+          border: "1px solid #000",
+          borderCollapse: "collapse",
+          width: "100%",
+        }}
+      >
+        <tbody>
+          <tr>
+            <td className="imagen-notificacion">
+              <img
+                src="./notificacion.png"
+                alt="Notificacion"
+                style={{ width: "70px", height: "70px" }}
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td className="encabezado-notificacion-no-servicio">
+              Aviso Importante
+            </td>
+          </tr>
+
+
+          <tr>
+            <td className="por-medio-notificacion">
+              se informa que el día
+              <br></br>
+              <span className="fecha-servicio-notificacion">
+                {inputs.fecha}
+              </span>
+              <br></br>
+              
+            </td>
+          </tr>
+
+          <tr className="no-se-contara-notificacion">
+            <td>
+              no se contará con servicio de checador(a)
+            </td>
+          </tr>
+
+          <tr className="lugar">
+            <td>
+              {inputs.lugar}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+
+          <tr>
+            <td className="motivos-notificacion">
+              Esta situación se debe a motivos de carácter personal del encargado del
+              servicio. Se realizó la búsqueda de una persona que pudiera cubrir la
+              jornada de ese día; sin embargo, no fue posible encontrar quien pudiera
+              asumir dicha responsabilidad.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+          <tr>
+            <td className="motivos-notificacion">
+              Agradecemos de antemano su comprensión ante esta situación. El servicio
+              se reanudará de manera normal al día siguiente en los horarios
+              habituales.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+          <tr>
+            <td className="motivos-notificacion">
+              Ofrecemos una disculpa por cualquier inconveniente que esto pueda
+              ocasionar y agradecemos su apoyo y comprensión.
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+          <tr>
+            <td className="copyright-notificacion">
+              @el.joyboy.de.chignautla
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
       <button
         className="boton-capturar"
         onClick={() => capturarTabla(tablaRef.current)}

@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Perfiles.css";
 
 import html2canvas from "html2canvas";
@@ -10,10 +10,15 @@ import fotouriel from "/uriel.png";
 import fotomarcos from "/marcos.png";
 
 function Perfiles() {
+
+  const [fechaAviso, setFechaAviso] = useState("");
+  
   const tablaAreliRef = useRef(null);
   const tablaIvanRef = useRef(null);
   const tablaUrielRef = useRef(null);
   const tablaMarcosRef = useRef(null);
+
+  const tablaNoServicioRef = useRef(null);
 
   function capturarTabla(tabla, nombre) {
     html2canvas(tabla, { scale: 8 }).then(function (canvas) {
@@ -287,6 +292,80 @@ function Perfiles() {
           Descargar Perfil Marcos
         </button>
       </div>
+      <br></br>
+
+      <div className="contenedor-general">
+        <div className="notificacion-card" ref={tablaNoServicioRef}>
+          {/* ENCABEZADO */}
+          <div className="header-notificacion">
+            <span className="icono-campana">🚨</span>
+            <span className="titulo-notificacion">INTERNADO</span>
+            <span className="icono-campana">🔔</span>
+          </div>
+
+          {/* FOTO + BURBUJA EXTENDIDA */}
+          <div className="capsula-info">
+            <img src={fotoareli} alt="Areli" className="foto-circular" />
+
+            <div className="texto-capsula">
+              <div className="empleado-nombre">ARELI DIONISIO RODRIGO</div>
+              <div className="empleado-puesto">
+                Encargada de Checadores • Internado
+              </div>
+            </div>
+          </div>
+
+          {/* SEPARADOR */}
+          <div className="separador"></div>
+
+          {/* FECHA */}
+          <div className="fecha-aviso">
+            {fechaAviso || "Agregue la fecha del aviso"}
+          </div>
+
+          {/* TEXTO FORMAL */}
+          <div className="mensaje-aviso">
+            Estimados compañeros:
+            <br />
+            <br />
+            Por causas ajenas a nuestro control y derivadas de fuerza mayor,
+            lamentamos informar que el día de hoy {fechaAviso || "Agregue la fecha del aviso"} <strong>no se contará con
+              servicio de checador(a) en el área del internado</strong>.
+            <br />
+            <br />
+            Nuestro equipo trabaja siempre con compromiso, responsabilidad y
+            total dedicación para brindar el mejor servicio posible. Sin embargo,
+            en esta ocasión, ninguna de las personas asignadas pudo presentarse a
+            laborar debido a una situación extraordinaria.
+            <br />
+            <br />
+            Agradecemos profundamente su comprensión y ofrecemos una
+            <strong> sincera y respetuosa disculpa por los inconvenientes
+              ocasionados</strong>.
+          </div>
+
+          <div className="copyright">© JoyBoy</div>
+        </div>
+
+        {/* EDITOR */}
+        <div className="editor-aviso">
+          <input
+            type="text"
+            placeholder="Escribe la fecha del aviso"
+            value={fechaAviso}
+            onChange={(e) => setFechaAviso(e.target.value)}
+          />
+
+          <button
+            onClick={() => capturarTabla(tablaNoServicioRef.current, "No servicio internado")}
+            className="button-descargar"
+          >
+            {" "}
+            Descargar No servicio internado
+          </button>
+        </div>
+      </div>
+      <br></br>
       <br></br>
     </div>
   );

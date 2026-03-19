@@ -3,3 +3,155 @@
     border-collapse: separate;
     border: 1px solid black;
 }
+
+/* FONDO ESTILO IOS 17 */
+/* .contenedor-general {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  padding: 12px;
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 172, 227, 0.45),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(255, 226, 150, 0.45),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(170, 200, 255, 0.40),
+      transparent 55%
+    );
+  backdrop-filter: blur(15px);
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+} */
+
+/* TARJETA */
+.notificacion-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  padding: 10px;
+  border-radius: 26px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ENCABEZADO */
+.header-notificacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo-notificacion {
+  font-size: 22px;
+  font-weight: 800;
+  color: #333;
+}
+
+.icono-campana {
+  font-size: 40px;
+}
+
+/* CAPSULA EXTENDIDA */
+.capsula-info {
+  margin-top: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 177, 213, 0.35),
+    rgba(255, 216, 235, 0.55)
+  );
+  border-radius: 60px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* CÍRCULO ROSA ELEGANTE */
+.foto-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff74b9, #ff4fa4);
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-circular {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+/* TEXTO EN LA CÁPSULA */
+.texto-capsula .empleado-nombre {
+  font-size: 18px;
+  font-weight: 800;
+  color: #3a3a3a;
+}
+
+.texto-capsula .empleado-puesto {
+  font-size: 14px;
+  opacity: 0.75;
+  color: #333;
+}
+
+/* SEPARADOR */
+.separador {
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #e8e8e8;
+}
+
+/* FECHA */
+.fecha-aviso {
+  background: #f2f2f2;
+  padding: 8px 14px;
+  display: inline-block;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+/* MENSAJE FORMAL */
+.mensaje-aviso {
+  line-height: 1.55;
+  font-size: 15px;
+  color: #333;
+}
+
+/* COPYRIGHT */
+.copyright {
+  margin-top: 25px;
+  text-align: right;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* EDITOR */
+.editor-aviso {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editor-aviso input {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+
+
