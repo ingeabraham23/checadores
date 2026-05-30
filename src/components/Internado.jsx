@@ -569,12 +569,122 @@ function Internado() {
           className="button-descargar"
         >
           {" "}
-          Descargar Horario Segmentado
+          Descargar Horario corrido de 10  a 8.30
         </button>
       </div>
       <br></br>
       <br></br>
 
+
+
+
+{/*TURNO COMNPLETO DE 10 A 7.00 - TURNO COMNPLETO DE 10 A 7.00 - TURNO COMNPLETO DE 10 A 7.00*/}
+      <form onSubmit={handleSubmit}>
+        <label>
+          <select
+            name="nombre"
+            value={inputs.nombre}
+            onChange={handleChange}
+            className="entrada-de-texto"
+          >
+            <option value="">Seleccione un nombre</option>
+            <option value="Areli Dionisio Rodrigo">
+              Areli Dionisio Rodrigo
+            </option>
+            <option value="Mario Ivan Santos Belen">
+              Mario Ivan Santos Belen
+            </option>
+            <option value="Uriel Hernandez Ramirez">
+              Uriel Hernandez Ramirez
+            </option>
+            <option value="Marcos Hernandez Ramirez">
+              Marcos Hernandez Ramirez
+            </option>
+            <option value="Abraham Cabrera Benito">
+              Abraham Cabrera Benito
+            </option>
+          </select>
+        </label>
+        {/* Input para subir la imagen */}
+        <button type="submit">Agregar</button>
+      </form>
+      <table
+        className="tabla-notificacion-turno"
+        ref={tablaTurno2Ref}
+        style={{
+          border: "1px solid #000",
+          borderCollapse: "collapse",
+          width: "100%",
+        }}
+      >
+        <tbody>
+          <tr>
+            <td className="imagen-notificacion">
+              <img
+                src="./notificacion.png"
+                alt="Notificacion"
+                style={{ width: "50px", height: "50px" }}
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td className="encabezado-notificacion-turno">
+              Notificación de Horario de Servicio para el Día de Hoy.
+            </td>
+          </tr>
+          <tr>
+            <td className="fecha-notificacion-turno">{fechaActual}</td>
+          </tr>
+
+          <tr>
+            <td className="informe-turno">
+              Estimados compañeros, Por medio de la presente, se les informa que
+              el día de hoy el servicio sera brindado por:
+            </td>
+          </tr>
+
+          <tr><td className="servidor">{inputs.nombre}</td></tr>
+
+          <tr>
+            <td className="horario-turnos">
+              En horario corrido de:
+            </td>
+          </tr>
+          <tr>
+            <td className="horario-turno">10:00 a.m. a 7:00 p.m.</td>
+          </tr>
+
+          <tr>
+            <td className="gracias-turno">
+              Gracias por tu atención y comprensión.
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <br></br>
+            </td>
+          </tr>
+          <tr>
+            <td className="copyright-notificacion">© @el.joyboy.de.chignautla</td>
+          </tr>
+          <br></br>
+        </tfoot>
+      </table>
+      <br></br>
+      <div>
+        <button
+          onClick={() => capturarTabla(tablaTurno2Ref.current)}
+          className="button-descargar"
+        >
+          {" "}
+          Descargar Horario corrido de 10  a 7.00
+        </button>
+      </div>
+      <br></br>
+      <br></br>
 
 
 
