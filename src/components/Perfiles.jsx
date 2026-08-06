@@ -8,17 +8,16 @@ import fotoareli from "/areli.png";
 import fotoivan from "/ivan.png";
 import fotouriel from "/uriel.png";
 import fotomarcos from "/marcos.png";
+import fotofernando from "/fernando.png";
 
 function Perfiles() {
-
-  const [fechaAviso, setFechaAviso] = useState("");
   
   const tablaAreliRef = useRef(null);
   const tablaIvanRef = useRef(null);
   const tablaUrielRef = useRef(null);
   const tablaMarcosRef = useRef(null);
+  const tablaFernandoRef = useRef(null);
 
-  const tablaNoServicioRef = useRef(null);
 
   function capturarTabla(tabla, nombre) {
     html2canvas(tabla, { scale: 8 }).then(function (canvas) {
@@ -228,6 +227,7 @@ function Perfiles() {
         </button>
       </div>
       <br></br>
+      
 
       <table className="tabla-areli" ref={tablaMarcosRef}>
         <thead></thead>
@@ -292,80 +292,73 @@ function Perfiles() {
           Descargar Perfil Marcos
         </button>
       </div>
-      <br></br>
 
-      <div className="contenedor-general">
-        <div className="notificacion-card" ref={tablaNoServicioRef}>
-          {/* ENCABEZADO */}
-          <div className="header-notificacion">
-            <span className="icono-campana">🚨</span>
-            <span className="titulo-notificacion">INTERNADO</span>
-            <span className="icono-campana">🔔</span>
-          </div>
 
-          {/* FOTO + BURBUJA EXTENDIDA */}
-          <div className="capsula-info">
-            <img src={fotoareli} alt="Areli" className="foto-circular" />
 
-            <div className="texto-capsula">
-              <div className="empleado-nombre">ARELI DIONISIO RODRIGO</div>
-              <div className="empleado-puesto">
-                Encargada de Checadores • Internado
-              </div>
-            </div>
-          </div>
-
-          {/* SEPARADOR */}
-          <div className="separador"></div>
-
-          {/* FECHA */}
-          <div className="fecha-aviso">
-            {fechaAviso || "Agregue la fecha del aviso"}
-          </div>
-
-          {/* TEXTO FORMAL */}
-          <div className="mensaje-aviso">
-            Estimados compañeros:
-            <br />
-            <br />
-            Por causas ajenas a nuestro control y derivadas de fuerza mayor,
-            lamentamos informar que el día de hoy {fechaAviso || "Agregue la fecha del aviso"} <strong>no se contará con
-              servicio de checador(a) en el área del internado</strong>.
-            <br />
-            <br />
-            Nuestro equipo trabaja siempre con compromiso, responsabilidad y
-            total dedicación para brindar el mejor servicio posible. Sin embargo,
-            en esta ocasión, ninguna de las personas asignadas pudo presentarse a
-            laborar debido a una situación extraordinaria.
-            <br />
-            <br />
-            Agradecemos profundamente su comprensión y ofrecemos una
-            <strong> sincera y respetuosa disculpa por los inconvenientes
-              ocasionados</strong>.
-          </div>
-
-          <div className="copyright">© JoyBoy</div>
-        </div>
-
-        {/* EDITOR */}
-        <div className="editor-aviso">
-          <input
-            type="text"
-            placeholder="Escribe la fecha del aviso"
-            value={fechaAviso}
-            onChange={(e) => setFechaAviso(e.target.value)}
-          />
-
-          <button
-            onClick={() => capturarTabla(tablaNoServicioRef.current, "No servicio internado")}
-            className="button-descargar"
-          >
-            {" "}
-            Descargar No servicio internado
-          </button>
-        </div>
+      <table className="tabla-areli" ref={tablaFernandoRef}>
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td className="photo-cell" colSpan="2">
+              <img
+                src={fotofernando}
+                alt="Fotografía del empleado"
+                className="profile-photo"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Nombre:</strong>
+            </td>
+            <td>HERNANDEZ HERNANDEZ FERNANDO</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Posición:</strong>
+            </td>
+            <td>Checador Internado y Chedraui</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Departamento:</strong>
+            </td>
+            <td>Logistica</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Teléfono:</strong>
+            </td>
+            <td>
+              <a className="phone-link" href="tel:2311397328">
+              231 128 4412
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Fecha de Contratación:</strong>
+            </td>
+            <td>Miercoles 22 de julio de 2026</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Dirección:</strong>
+            </td>
+            <td>Calle 20 de Febrero #22 Col San Antonio</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <button
+          onClick={() => capturarTabla(tablaFernandoRef.current, "Perfil Fernando")}
+          className="button-descargar"
+        >
+          {" "}
+          Descargar Perfil Marcos
+        </button>
       </div>
-      <br></br>
+
       <br></br>
     </div>
   );

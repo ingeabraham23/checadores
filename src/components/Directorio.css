@@ -1,0 +1,170 @@
+.directorio {
+  margin-top: 80px; /* Ajusta según la altura de tu Navbar */
+  padding: 15px;
+  background: #f5f5f5;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.titulo-directorio {
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.busqueda {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.icono-busqueda {
+  color: #777;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.busqueda input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #222;
+}
+
+.busqueda input::placeholder {
+  color: #999;
+}
+
+.lista-contactos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tarjeta-contacto {
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.info-contacto {
+  display: flex;
+  align-items: center;
+}
+
+.foto-contacto,
+.foto-inicial {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.foto-contacto {
+  object-fit: cover;
+}
+
+.foto-inicial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1976d2;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.datos-contacto {
+  margin-left: 14px;
+  flex: 1;
+}
+
+.nombre-contacto {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.telefono-contacto {
+  font-size: .95rem;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+}
+
+.acciones-contacto {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #ececec;
+}
+
+.btn-accion {
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-llamar {
+  background: #1976d2;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+}
+
+.btn-copiar {
+  background: #616161;
+}
+
+.btn-compartir {
+  background: #ff9800;
+}
+
+.mensaje-copiado {
+  background: #323232;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: .9rem;
+}
+
+.sin-resultados {
+  text-align: center;
+  color: #888;
+  margin-top: 40px;
+  font-size: .95rem;
+}
+
+/* Tablets */
+
+@media (min-width: 768px) {
+
+  .lista-contactos {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  .busqueda {
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+}

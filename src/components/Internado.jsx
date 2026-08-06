@@ -1,28 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useRef, useState } from "react";
+
 import "./Internado.css";
 
-import html2canvas from "html2canvas";
-import fototarifa from "/tarifa checadores internado.png";
-import fotohorarios from "/horarios checadores internado.png";
+import Comunicado from "./Comunicado";
+
+import SelectorChecador from "./SelectorChecador";
+
+import BotonDescargar from "./BotonDescargar";
+
+import ReglasInternado from "./ReglasInternado";
 
 function Internado() {
-  const tablaReglasRef = useRef(null);
-  const tablaTurnoRef = useRef(null);
-  const tablaTurno10Ref = useRef(null);
-  const tablaTurno2Ref = useRef(null);
-
-  function capturarTabla(tabla) {
-    html2canvas(tabla, { scale: 4 }).then(function (canvas) {
-      const pngUrl = canvas.toDataURL("image/png");
-      const downloadLink = document.createElement("a");
-      downloadLink.href = pngUrl;
-      downloadLink.download = `Perfil.png`;
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
-    });
-  }
+  const [nombre, setNombre] = useState("");
 
   const fechaActual = new Date().toLocaleDateString("es-ES", {
     weekday: "long",
@@ -31,818 +21,187 @@ function Internado() {
     year: "numeric",
   });
 
-  const [inputs, setInputs] = useState({
-    nombre: "",
-  });
+  const continuoRef = useRef(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputs((prevInputs) => ({
-      ...prevInputs,
-      [name]: value,
-    }));
-  };
+  const segmentadoRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí puedes agregar lógica para guardar los datos, si es necesario
-  };
+  const segmentado2Ref = useRef(null);
+
+  const completoRef = useRef(null);
+
+  const reglasRef = useRef(null);
+
+  const tarifaRef = useRef(null);
 
   return (
     <div className="contenedor-chedraui">
-      <table
-        className="tabla-notificacion-turno"
-        ref={tablaTurnoRef}
-        style={{
-          border: "1px solid #000",
-          borderCollapse: "collapse",
-          width: "100%",
-        }}
-      >
-        <tbody>
-          <tr>
-            <td className="imagen-notificacion">
-              <img
-                src="./notificacion.png"
-                alt="Notificacion"
-                style={{ width: "70px", height: "70px" }}
-              />
-            </td>
-          </tr>
+      {/* ==================================
+              HORARIO CONTINUO
+      =================================== */}
 
-          <tr>
-            <td className="encabezado-notificacion-turno">
-              Notificación de Horario de Servicio para el Día de Hoy.
-            </td>
-          </tr>
-          <tr>
-            <td className="fecha-notificacion-turno">{fechaActual}</td>
-          </tr>
+      <Comunicado
+        ref={continuoRef}
+        titulo="Checador(a) Internado"
+        fecha={fechaActual}
+        mensaje="
+        Estimados compañeros, por medio de la presente,
+        se les informa que el día de hoy el servicio será
+        brindado en horario continuo.
+        "
+        tipo="continuo"
+        horario="09:00 a.m. a 8:30 p.m."
+      />
 
-          <tr>
-            <td className="informe-turno">
-              Estimados compañeros, Por medio de la presente, se les informa que
-              el día de hoy el servicio se brindará en:
-            </td>
-          </tr>
+      <BotonDescargar
+        referencia={continuoRef}
+        texto="Descargar Horario Continuo"
+        nombreArchivo="Horario-continuo.png"
+      />
 
-          <tr>
-            <td className="horario-turno">
-              horario continuo de 09:00 a.m. a 8:30 p.m.
-            </td>
-          </tr>
+      {/* ==================================
+            SELECTOR CHECADOR
+      =================================== */}
 
-          <tr>
-            <td className="asignacion-turno">
-              Para garantizar una adecuada cobertura, la asignación del servicio
-              será la siguiente:
-            </td>
-          </tr>
-          <tr>
-            <td className="horario-turnos">
-              Primer turno: de 9:00 a.m. a 1:00 p.m. Segundo turno: de 1:00 p.m.
-              a 8:30 p.m.
-            </td>
-          </tr>
+      <SelectorChecador nombre={nombre} setNombre={setNombre} />
 
+      {/* ==================================
+              HORARIO SEGMENTADO
+      =================================== */}
 
-          <tr>
-            <td className="gracias-turno">
-              Gracias por tu atención y comprensión.
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
-          <tr>
-            <td className="copyright-notificacion">© JoyBoy</td>
-          </tr>
-          <br></br>
-        </tfoot>
-      </table>
-      <br></br>
-      <div>
-        <button
-          onClick={() => capturarTabla(tablaTurnoRef.current)}
-          className="button-descargar"
-        >
-          {" "}
-          Descargar Horario Continuo
-        </button>
-      </div>
-      <br></br>
-      <br></br>
-      <table
-        className="tabla-notificacion-turno"
-        ref={tablaTurno10Ref}
-        style={{
-          border: "1px solid #000",
-          borderCollapse: "collapse",
-          width: "100%",
-        }}
-      >
-        <tbody>
-          <tr>
-            <td className="imagen-notificacion">
-              <img
-                src="./notificacion.png"
-                alt="Notificacion"
-                style={{ width: "70px", height: "70px" }}
-              />
-            </td>
-          </tr>
+      <Comunicado
+        ref={segmentadoRef}
+        titulo="Checador(a) Internado"
+        fecha={fechaActual}
+        nombre={nombre}
+        mensaje="
+        Estimados compañeros, por medio de la presente,
+        se les informa que el día de hoy el servicio será
+        brindado por:
+        "
+        tipo="segmentado"
+        primerHorario="9:30 a.m. a 3:00 p.m."
+        comidaHorario="3:00 p.m. a 4:00 p.m."
+        segundoHorario="4:00 p.m. a 8:30 p.m."
+      />
 
-          <tr>
-            <td className="encabezado-notificacion-turno">
-              Notificación de Horario de Servicio para el Día de Hoy.
-            </td>
-          </tr>
-          <tr>
-            <td className="fecha-notificacion-turno">{fechaActual}</td>
-          </tr>
+      <BotonDescargar
+        referencia={segmentadoRef}
+        texto="Descargar Horario Segmentado"
+        nombreArchivo="Horario-segmentado.png"
+      />
 
-          <tr>
-            <td className="informe-turno">
-              Estimados compañeros, Por medio de la presente, se les informa que
-              el día de hoy.
-            </td>
-          </tr>
+      {/* ==================================
+          HORARIO SEGMENTADO 2
+          9:30 - 2:30 / COMIDA / 3:30 - 8:30
+      =================================== */}
 
-          <tr>
-            <td className="servicio-checadora">
-              el servicio de checadora en el internado se brindará en:
-            </td>
-          </tr>
+      <Comunicado
+        ref={segmentado2Ref}
+        titulo="Checador(a) Internado"
+        fecha={fechaActual}
+        nombre={nombre}
+        mensaje="
+        Estimados compañeros, por medio de la presente,
+        se les informa que el día de hoy el servicio será
+        brindado por:
+        "
+        tipo="segmentado"
+        primerHorario="9:30 a.m. a 2:30 p.m."
+        comidaHorario="2:30 p.m. a 3:30 p.m."
+        segundoHorario="3:30 p.m. a 8:30 p.m."
+      />
 
-          <tr>
-            <td className="horario-turno">
-              horario continuo de 10:00 a.m. a 8:30 p.m.
-            </td>
-          </tr>
-          <tr>
-            <td className="gracias-turno">
-              Gracias por tu atención y comprensión.
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
-          <tr>
-            <td className="copyright-notificacion">© JoyBoy</td>
-          </tr>
-          <br></br>
-        </tfoot>
-      </table>
-      <br></br>
-      <div>
-        <button
-          onClick={() => capturarTabla(tablaTurno10Ref.current)}
-          className="button-descargar"
-        >
-          {" "}
-          Descargar Horario Continuo
-        </button>
-      </div>
-      <br></br>
-      <br></br>
-      
-      {/*TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO TURNO SEGMENTADO */}
-      <form onSubmit={handleSubmit}>
-        <label>
-          <select
-            name="nombre"
-            value={inputs.nombre}
-            onChange={handleChange}
-            className="entrada-de-texto"
-          >
-            <option value="">Seleccione un nombre</option>
-            <option value="Areli Dionisio Rodrigo">
-              Areli Dionisio Rodrigo
-            </option>
-            <option value="Mario Ivan Santos Belen">
-              Mario Ivan Santos Belen
-            </option>
-            <option value="Uriel Hernandez Ramirez">
-              Uriel Hernandez Ramirez
-            </option>
-            <option value="Marcos Hernandez Ramirez">
-              Marcos Hernandez Ramirez
-            </option>
-            <option value="Abraham Cabrera Benito">
-              Abraham Cabrera Benito
-            </option>
-          </select>
-        </label>
-        {/* Input para subir la imagen */}
-        <button type="submit">Agregar</button>
-      </form>
-      <table
-        className="tabla-notificacion-turno"
-        ref={tablaTurno2Ref}
-        style={{
-          border: "1px solid #000",
-          borderCollapse: "collapse",
-          width: "100%",
-        }}
-      >
-        <tbody>
-          <tr>
-            <td className="imagen-notificacion">
-              <img
-                src="./notificacion.png"
-                alt="Notificacion"
-                style={{ width: "50px", height: "50px" }}
-              />
-            </td>
-          </tr>
+      <BotonDescargar
+        referencia={segmentado2Ref}
+        texto="Descargar Horario Segmentado 2"
+        nombreArchivo="Horario-segmentado-2.png"
+      />
 
-          <tr>
-            <td className="encabezado-notificacion-turno">
-              Notificación de Horario de Servicio para el Día de Hoy.
-            </td>
-          </tr>
-          <tr>
-            <td className="fecha-notificacion-turno">{fechaActual}</td>
-          </tr>
+      {/* ==================================
+              HORARIO COMPLETO
+              10:00 - 8:30
+      =================================== */}
 
-          <tr>
-            <td className="informe-turno">
-              Estimados compañeros, Por medio de la presente, se les informa que
-              el día de hoy el servicio sera brindado por:
-            </td>
-          </tr>
+      <Comunicado
+        ref={completoRef}
+        titulo="Checador(a) Internado"
+        fecha={fechaActual}
+        nombre={nombre}
+        mensaje="
+        Estimados compañeros, por medio de la presente,
+        se les informa que el día de hoy el servicio será
+        brindado por:
+        "
+        tipo="continuo"
+        horario="10:00 a.m. a 8:30 p.m."
+      />
 
-          <tr><td className="servidor">{inputs.nombre}</td></tr>
+      <BotonDescargar
+        referencia={completoRef}
+        texto="Descargar Horario Completo"
+        nombreArchivo="Horario-completo.png"
+      />
 
-          <tr>
-            <td className="horario-turnos">
-              En horario segmentado de la siguiente manera:
-            </td>
-          </tr>
-          <tr>
-            <td className="horario-turno-de">Primer turno de:</td>
-          </tr>
-          <tr>
-            <td className="horario-turno">9:30 a.m. a 3:00 p.m.</td>
-          </tr>
-          <tr>
-            <td className="horario-turno-de-comida">Receso para comida de:</td>
-          </tr>
-          <tr>
-            <td className="horario-turno-comida">3:00 p.m. a 4:00 p.m.</td>
-          </tr>
-          <tr>
-            <td className="horario-turno-de">Segundo turno de:</td>
-          </tr>
-          <tr>
-            <td className="horario-turno">4:00 p.m. a 8:30 p.m.</td>
-          </tr>
+      {/* ==================================
+                 REGLAS
+      =================================== */}
 
-          <tr>
-            <td className="gracias-turno">
-              Gracias por tu atención y comprensión.
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
-          <tr>
-            <td className="copyright-notificacion">© JoyBoy</td>
-          </tr>
-          <br></br>
-        </tfoot>
-      </table>
-      <br></br>
-      <div>
-        <button
-          onClick={() => capturarTabla(tablaTurno2Ref.current)}
-          className="button-descargar"
-        >
-          {" "}
-          Descargar Horario Segmentado
-        </button>
-      </div>
-      <br></br>
-      <br></br>
-
-
-
-
-
-      {/*TURNO SEGMENTADO 2:30 TURNO SEGMENTADO 2:30 TURNO SEGMENTADO 2:30 TURNO SEGMENTADO 2:30 TURNO SEGMENTADO 2:30 */}
-      <form onSubmit={handleSubmit}>
-        <label>
-          <select
-            name="nombre"
-            value={inputs.nombre}
-            onChange={handleChange}
-            className="entrada-de-texto"
-          >
-            <option value="">Seleccione un nombre</option>
-            <option value="Areli Dionisio Rodrigo">
-              Areli Dionisio Rodrigo
-            </option>
-            <option value="Mario Ivan Santos Belen">
-              Mario Ivan Santos Belen
-            </option>
-            <option value="Uriel Hernandez Ramirez">
-              Uriel Hernandez Ramirez
-            </option>
-            <option value="Marcos Hernandez Ramirez">
-              Marcos Hernandez Ramirez
-            </option>
-            <option value="Abraham Cabrera Benito">
-              Abraham Cabrera Benito
-            </option>
-          </select>
-        </label>
-        {/* Input para subir la imagen */}
-        <button type="submit">Agregar</button>
-      </form>
-      <table
-        className="tabla-notificacion-turno"
-        ref={tablaTurno2Ref}
-        style={{
-          border: "1px solid #000",
-          borderCollapse: "collapse",
-          width: "100%",
-        }}
-      >
-        <tbody>
-          <tr>
-            <td className="imagen-notificacion">
-              <img
-                src="./notificacion.png"
-                alt="Notificacion"
-                style={{ width: "50px", height: "50px" }}
-              />
-            </td>
-          </tr>
-
-          <tr>
-            <td className="encabezado-notificacion-turno">
-              Notificación de Horario de Servicio para el Día de Hoy.
-            </td>
-          </tr>
-          <tr>
-            <td className="fecha-notificacion-turno">{fechaActual}</td>
-          </tr>
-
-          <tr>
-            <td className="informe-turno">
-              Estimados compañeros, Por medio de la presente, se les informa que
-              el día de hoy el servicio sera brindado por:
-            </td>
-          </tr>
-
-          <tr><td className="servidor">{inputs.nombre}</td></tr>
-
-          <tr>
-            <td className="horario-turnos">
-              En horario segmentado de la siguiente manera:
-            </td>
-          </tr>
-          <tr>
-            <td className="horario-turno-de">Primer turno de:</td>
-          </tr>
-          <tr>
-            <td className="horario-turno">9:30 a.m. a 2:30 p.m.</td>
-          </tr>
-          <tr>
-            <td className="horario-turno-de-comida">Receso para comida de:</td>
-          </tr>
-          <tr>
-            <td className="horario-turno-comida">2:30 p.m. a 3:30 p.m.</td>
-          </tr>
-          <tr>
-            <td className="horario-turno-de">Segundo turno de:</td>
-          </tr>
-          <tr>
-            <td className="horario-turno">3:30 p.m. a 8:30 p.m.</td>
-          </tr>
-
-          <tr>
-            <td className="gracias-turno">
-              Gracias por tu atención y comprensión.
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
-          <tr>
-            <td className="copyright-notificacion">© JoyBoy</td>
-          </tr>
-          <br></br>
-        </tfoot>
-      </table>
-      <br></br>
-      <div>
-        <button
-          onClick={() => capturarTabla(tablaTurno2Ref.current)}
-          className="button-descargar"
-        >
-          {" "}
-          Descargar Horario Segmentado
-        </button>
-      </div>
-      <br></br>
-      <br></br>
-
-
-
-
-      {/*TURNO COMNPLETO DE 10 A 8.30 - TURNO COMNPLETO DE 10 A 8.30 - TURNO COMNPLETO DE 10 A 8.30*/}
-      <form onSubmit={handleSubmit}>
-        <label>
-          <select
-            name="nombre"
-            value={inputs.nombre}
-            onChange={handleChange}
-            className="entrada-de-texto"
-          >
-            <option value="">Seleccione un nombre</option>
-            <option value="Areli Dionisio Rodrigo">
-              Areli Dionisio Rodrigo
-            </option>
-            <option value="Mario Ivan Santos Belen">
-              Mario Ivan Santos Belen
-            </option>
-            <option value="Uriel Hernandez Ramirez">
-              Uriel Hernandez Ramirez
-            </option>
-            <option value="Marcos Hernandez Ramirez">
-              Marcos Hernandez Ramirez
-            </option>
-            <option value="Abraham Cabrera Benito">
-              Abraham Cabrera Benito
-            </option>
-          </select>
-        </label>
-        {/* Input para subir la imagen */}
-        <button type="submit">Agregar</button>
-      </form>
-      <table
-        className="tabla-notificacion-turno"
-        ref={tablaTurno2Ref}
-        style={{
-          border: "1px solid #000",
-          borderCollapse: "collapse",
-          width: "100%",
-        }}
-      >
-        <tbody>
-          <tr>
-            <td className="imagen-notificacion">
-              <img
-                src="./notificacion.png"
-                alt="Notificacion"
-                style={{ width: "50px", height: "50px" }}
-              />
-            </td>
-          </tr>
-
-          <tr>
-            <td className="encabezado-notificacion-turno">
-              Notificación de Horario de Servicio para el Día de Hoy.
-            </td>
-          </tr>
-          <tr>
-            <td className="fecha-notificacion-turno">{fechaActual}</td>
-          </tr>
-
-          <tr>
-            <td className="informe-turno">
-              Estimados compañeros, Por medio de la presente, se les informa que
-              el día de hoy el servicio sera brindado por:
-            </td>
-          </tr>
-
-          <tr><td className="servidor">{inputs.nombre}</td></tr>
-
-          <tr>
-            <td className="horario-turnos">
-              En horario corrido de:
-            </td>
-          </tr>
-          <tr>
-            <td className="horario-turno">10:00 a.m. a 8:30 p.m.</td>
-          </tr>
-
-          <tr>
-            <td className="gracias-turno">
-              Gracias por tu atención y comprensión.
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
-          <tr>
-            <td className="copyright-notificacion">© @el.joyboy.de.chignautla</td>
-          </tr>
-          <br></br>
-        </tfoot>
-      </table>
-      <br></br>
-      <div>
-        <button
-          onClick={() => capturarTabla(tablaTurno2Ref.current)}
-          className="button-descargar"
-        >
-          {" "}
-          Descargar Horario corrido de 10  a 8.30
-        </button>
-      </div>
-      <br></br>
-      <br></br>
-
-
-
-
-{/*TURNO COMNPLETO DE 10 A 7.00 - TURNO COMNPLETO DE 10 A 7.00 - TURNO COMNPLETO DE 10 A 7.00*/}
-      <form onSubmit={handleSubmit}>
-        <label>
-          <select
-            name="nombre"
-            value={inputs.nombre}
-            onChange={handleChange}
-            className="entrada-de-texto"
-          >
-            <option value="">Seleccione un nombre</option>
-            <option value="Areli Dionisio Rodrigo">
-              Areli Dionisio Rodrigo
-            </option>
-            <option value="Mario Ivan Santos Belen">
-              Mario Ivan Santos Belen
-            </option>
-            <option value="Uriel Hernandez Ramirez">
-              Uriel Hernandez Ramirez
-            </option>
-            <option value="Marcos Hernandez Ramirez">
-              Marcos Hernandez Ramirez
-            </option>
-            <option value="Abraham Cabrera Benito">
-              Abraham Cabrera Benito
-            </option>
-          </select>
-        </label>
-        {/* Input para subir la imagen */}
-        <button type="submit">Agregar</button>
-      </form>
-      <table
-        className="tabla-notificacion-turno"
-        ref={tablaTurno2Ref}
-        style={{
-          border: "1px solid #000",
-          borderCollapse: "collapse",
-          width: "100%",
-        }}
-      >
-        <tbody>
-          <tr>
-            <td className="imagen-notificacion">
-              <img
-                src="./notificacion.png"
-                alt="Notificacion"
-                style={{ width: "50px", height: "50px" }}
-              />
-            </td>
-          </tr>
-
-          <tr>
-            <td className="encabezado-notificacion-turno">
-              Notificación de Horario de Servicio para el Día de Hoy.
-            </td>
-          </tr>
-          <tr>
-            <td className="fecha-notificacion-turno">{fechaActual}</td>
-          </tr>
-
-          <tr>
-            <td className="informe-turno">
-              Estimados compañeros, Por medio de la presente, se les informa que
-              el día de hoy el servicio sera brindado por:
-            </td>
-          </tr>
-
-          <tr><td className="servidor">{inputs.nombre}</td></tr>
-
-          <tr>
-            <td className="horario-turnos">
-              En horario corrido de:
-            </td>
-          </tr>
-          <tr>
-            <td className="horario-turno">10:00 a.m. a 7:00 p.m.</td>
-          </tr>
-
-          <tr>
-            <td className="gracias-turno">
-              Gracias por tu atención y comprensión.
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
-          <tr>
-            <td className="copyright-notificacion">© @el.joyboy.de.chignautla</td>
-          </tr>
-          <br></br>
-        </tfoot>
-      </table>
-      <br></br>
-      <div>
-        <button
-          onClick={() => capturarTabla(tablaTurno2Ref.current)}
-          className="button-descargar"
-        >
-          {" "}
-          Descargar Horario corrido de 10  a 7.00
-        </button>
-      </div>
-      <br></br>
-      <br></br>
-
-
-
-      <table className="rules-table" ref={tablaReglasRef}>
-        <thead>
-          <tr>
-            <th>Reglas del Grupo: Internado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <strong>1. Horario de operación:</strong> Los envíos de datos se
-              realizarán dentro del horario de 9:30 am a 3:00 pm.{" "}
-              <strong style={{ color: "black" }}>
-                De 3:00 pm a 4:00 pm será la hora de comida.
-              </strong>{" "}
-              Posteriormente, el servicio continuará de 4:00 pm a 8:30 pm. Si
-              por alguna razón no puedes entregar la comisión en un día, deberás
-              reponerla al día siguiente. Esto significa que, al día siguiente,
-              deberás entregar $40 pesos en comisiones, considerando el día
-              anterior y el día actual.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>2. Horario estratégico:</strong> Trata de entregar la
-              comisión en un horario con poca afluencia de pasajeros y
-              camionetas de transporte público. Esto ayudará a minimizar errores
-              y asegurar un proceso más eficiente.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>3. Comisión diaria:</strong> La comisión diaria es de $20
-              pesos. Asegúrate de cumplir con esta cantidad diariamente.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>4. Contenido respetuoso y específico:</strong> Solo se
-              permite compartir información relacionada con el trabajo. No se
-              permite el envío de contenido ofensivo, insultante, despreciativo
-              o información que no esté relacionada con Urbanos Rojos.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>
-                5. No compartir información con personas ajenas a Urbanos Rojos:
-              </strong>{" "}
-              Está estrictamente prohibido compartir información del grupo con
-              personas que no estén involucradas en el trabajo con Urbanos
-              Rojos.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>6. No enviar spam, cadenas, etc.:</strong> No se permite
-              el envío de mensajes no solicitados, spam, cadenas, ni contenido
-              que no esté relacionado con el trabajo.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>
-                7. Comunicación mediante mensajes y audios de WhatsApp
-                únicamente:
-              </strong>{" "}
-              Se prohíben las llamadas de voz o video en el grupo, ya que esto
-              puede afectar la capacidad de recabar datos de manera eficiente.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>8. Consecuencias por incumplimiento:</strong> Si no se
-              cumplen las reglas, se eliminará al miembro del grupo y se dejará
-              de brindar información. En caso de trabajar por privado, también
-              se dejará de proporcionar información.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>9. Administración del grupo:</strong> Los miembros del
-              comíte encargado del sistema de checadores tienen la autoridad
-              para hacer cumplir estas reglas. Si surgen problemas o desacuerdos
-              en el grupo, trata de resolverlos de manera pacífica y respetuosa.
-              Si no puedes llegar a una solución, puedes comunicarte con los
-              miembros del comíte para que te ayuden a resolver el problema.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Estas reglas actualizadas y las consecuencias por su
-              incumplimiento deberían ayudar a mantener un ambiente de trabajo
-              productivo y eficiente en el grupo de WhatsApp. Asegúrate de
-              comunicar estas reglas a todos los miembros para que estén al
-              tanto de las normas y las consecuencias a seguir.
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <br></br>
-            </td>
-          </tr>
-          <tr>
-            <td className="copyright-notificacion">© JoyBoy</td>
-          </tr>
-          <br></br>
-        </tfoot>
-      </table>
-      <br></br>
-      <div>
-        <button
-          onClick={() => capturarTabla(tablaReglasRef.current)}
-          className="button-descargar"
-        >
-          {" "}
-          Descargar Reglas
-        </button>
+      <div ref={reglasRef}>
+        <ReglasInternado />
       </div>
 
-      <br></br>
-      <div className="contenedor-imagen">
-        <img
-          src={fototarifa}
-          alt="Tarifa pra el checador de chedraui"
-          className="tarifa"
-        />
-        <br></br>
-        <a
-          href={fototarifa}
-          download="tarifa-chedraui.jpg"
-          className="download-btn"
-        >
-          Descargar Imagen de Tarifa
-        </a>
+      <BotonDescargar
+        referencia={reglasRef}
+        texto="Descargar Reglas"
+        nombreArchivo="Reglas-internado.png"
+      />
+
+      <div className="comunicado" ref={tarifaRef}>
+        <div className="comunicado-header">
+          <div className="logo-subtitulo">Sistema de Checadores</div>
+
+          <div className="logo-subtitulo">Tarifa y Reglas del Servicio</div>
+        </div>
+
+        <div className="comunicado-body">
+          <div className="tarjeta-horario">
+            <div className="tarjeta-header">
+              <div className="tarjeta-titulo">💵 Tarifa</div>
+            </div>
+
+            <div className="tarjeta-body">
+              <div className="tarjeta-hora">$20.00 diarios</div>
+            </div>
+          </div>
+
+          <div className="linea-decorativa"></div>
+
+          <div className="comunicado-texto">
+            <hr></hr>
+            <strong>• Horario recomendado: </strong>
+            Se recomienda realizar el pago en un horario con poca afluencia de
+            pasajeros y unidades, con la finalidad de facilitar el trabajo del
+            checador y evitar errores.
+            <hr></hr>
+            <strong>• Pago pendiente: </strong>
+            Si por alguna causa de fuerza mayor no fue posible realizar el pago,
+            deberá cubrirse al día siguiente a primera hora, junto con la cuota
+            correspondiente al nuevo día.
+            <hr></hr>
+            <strong>• Comunicación: </strong>
+            La comunicación con los checadores deberá limitarse exclusivamente a
+            temas relacionados con el trabajo y el servicio.
+          </div>
+        </div>
+        <div className="comunicado-footer">© JoyBoy</div>
       </div>
-      <br></br>
-      <div className="contenedor-imagen">
-        <img
-          src={fotohorarios}
-          alt="Horarios para el checador de chedraui"
-          className="tarifa"
-        />
-        <br></br>
-        <a
-          href={fotohorarios}
-          download="horarios-internado.jpg"
-          className="download-btn"
-        >
-          Descargar Imagen de Horarios Internado
-        </a>
-      </div>
+
+      <BotonDescargar
+        referencia={tarifaRef}
+        texto="Descargar Tarifa y Reglas"
+        nombreArchivo="Tarifa-y-Reglas-Internado.png"
+      />
     </div>
   );
 }
-
 export default Internado;

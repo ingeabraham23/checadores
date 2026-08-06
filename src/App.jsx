@@ -8,6 +8,7 @@ import Notificacion from "./components/Notificacion";
 import Internado from "./components/Internado";
 import Empleo from "./components/Empleo";
 import Curso from "./components/Curso";
+import Directorio from "./components/Directorio";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/notificacion" element={<Notificacion />} />
             <Route path="/empleo" element={<Empleo />} />
             <Route path="/curso" element={<Curso />} />
+            <Route path="/directorio" element={<Directorio />} />
           </Routes>
         </div>
     </HashRouter>

@@ -2,16 +2,17 @@ import { Link } from 'react-router-dom';
 import "./Navbar.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressBook, faBell, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faBriefcase, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faPlay, faClock, } from '@fortawesome/free-solid-svg-icons';
 
 
 const navigationItems = [
   { path: '/', icon: faUser, label: 'Perfiles' },
-  { path: '/internado', icon: faAddressBook, label: 'Internado' },
+  { path: '/internado', icon: faClock, label: 'Internado' },
   { path: '/chedraui', icon: faUser, label: 'Chedraui' },
   { path: '/notificacion', icon: faBell, label: 'Notificacion' },
   { path: '/empleo', icon: faBriefcase, label: 'Empleo' },
   { path: '/curso', icon: faPlay, label: 'Curso' },
+  { path: '/directorio', icon: faAddressBook, label: 'Directorio' },
 
 ];
 
