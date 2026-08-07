@@ -10,14 +10,33 @@ import fotouriel from "/uriel.png";
 import fotomarcos from "/marcos.png";
 import fotofernando from "/fernando.png";
 
+const compartirNumero = async (telefono, nombre = "Contacto") => {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: nombre,
+        text: `Teléfono: ${telefono}`,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    try {
+      await navigator.clipboard.writeText(telefono);
+      alert("Número copiado al portapapeles");
+      // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      alert("No fue posible copiar el número");
+    }
+  }
+};
+
 function Perfiles() {
-  
   const tablaAreliRef = useRef(null);
   //const tablaIvanRef = useRef(null);
   const tablaUrielRef = useRef(null);
   const tablaMarcosRef = useRef(null);
   const tablaFernandoRef = useRef(null);
-
 
   function capturarTabla(tabla, nombre) {
     html2canvas(tabla, { scale: 8 }).then(function (canvas) {
@@ -87,6 +106,25 @@ function Perfiles() {
           </tr>
         </tbody>
       </table>
+      <div className="acciones-contacto">
+        <a
+          href="https://wa.me/522311400365"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-contacto btn-whatsapp"
+        >
+          📱 WhatsApp
+        </a>
+
+        <button
+          className="btn-contacto btn-share"
+          onClick={() =>
+            compartirNumero("2311400365", "DIONISIO RODRIGO ARELI")
+          }
+        >
+          📤 Compartir
+        </button>
+      </div>
       <div>
         <button
           onClick={() => capturarTabla(tablaAreliRef.current, "Perfil Areli")}
@@ -96,6 +134,9 @@ function Perfiles() {
           Descargar Perfil Areli
         </button>
       </div>
+
+      
+
       <br></br>
 
       {/* <table className="tabla-areli" ref={tablaIvanRef}>
@@ -199,7 +240,7 @@ function Perfiles() {
             </td>
             <td>
               <a className="phone-link" href="tel:2311815657">
-              231 181 5657
+                231 181 5657
               </a>
             </td>
           </tr>
@@ -217,6 +258,25 @@ function Perfiles() {
           </tr>
         </tbody>
       </table>
+      <div className="acciones-contacto">
+        <a
+          href="https://wa.me/2311815657"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-contacto btn-whatsapp"
+        >
+          📱 WhatsApp
+        </a>
+
+        <button
+          className="btn-contacto btn-share"
+          onClick={() =>
+            compartirNumero("2311815657", "HERNANDEZ RAMIREZ URIEL")
+          }
+        >
+          📤 Compartir
+        </button>
+      </div>
       <div>
         <button
           onClick={() => capturarTabla(tablaUrielRef.current, "Perfil Uriel")}
@@ -227,7 +287,6 @@ function Perfiles() {
         </button>
       </div>
       <br></br>
-      
 
       <table className="tabla-areli" ref={tablaMarcosRef}>
         <thead></thead>
@@ -265,7 +324,7 @@ function Perfiles() {
             </td>
             <td>
               <a className="phone-link" href="tel:2311397328">
-              231 139 7328
+                231 139 7328
               </a>
             </td>
           </tr>
@@ -283,6 +342,25 @@ function Perfiles() {
           </tr>
         </tbody>
       </table>
+      <div className="acciones-contacto">
+        <a
+          href="https://wa.me/2311397328"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-contacto btn-whatsapp"
+        >
+          📱 WhatsApp
+        </a>
+
+        <button
+          className="btn-contacto btn-share"
+          onClick={() =>
+            compartirNumero("2311397328", "HERNANDEZ RAMIREZ MARCOS")
+          }
+        >
+          📤 Compartir
+        </button>
+      </div>
       <div>
         <button
           onClick={() => capturarTabla(tablaMarcosRef.current, "Perfil Marcos")}
@@ -292,8 +370,6 @@ function Perfiles() {
           Descargar Perfil Marcos
         </button>
       </div>
-
-
 
       <table className="tabla-areli" ref={tablaFernandoRef}>
         <thead></thead>
@@ -330,8 +406,8 @@ function Perfiles() {
               <strong>Teléfono:</strong>
             </td>
             <td>
-              <a className="phone-link" href="tel:2311397328">
-              231 128 4412
+              <a className="phone-link" href="tel:2311486468">
+                231 148 6468
               </a>
             </td>
           </tr>
@@ -349,13 +425,34 @@ function Perfiles() {
           </tr>
         </tbody>
       </table>
+      <div className="acciones-contacto">
+        <a
+          href="https://wa.me/2311486468"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-contacto btn-whatsapp"
+        >
+          📱 WhatsApp
+        </a>
+
+        <button
+          className="btn-contacto btn-share"
+          onClick={() =>
+            compartirNumero("2311486468", "HERNANDEZ HERNANDEZ FERNANDO")
+          }
+        >
+          📤 Compartir
+        </button>
+      </div>
       <div>
         <button
-          onClick={() => capturarTabla(tablaFernandoRef.current, "Perfil Fernando")}
+          onClick={() =>
+            capturarTabla(tablaFernandoRef.current, "Perfil Fernando")
+          }
           className="button-descargar"
         >
           {" "}
-          Descargar Perfil Marcos
+          Descargar Perfil Fernando
         </button>
       </div>
 

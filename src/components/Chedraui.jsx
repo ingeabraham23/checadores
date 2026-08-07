@@ -9,7 +9,7 @@ import SelectorChecador from "./SelectorChecador";
 
 import BotonDescargar from "./BotonDescargar";
 
-import ReglasInternado from "./ReglasInternado";
+import ReglasChedraui from "./ReglasChedraui";
 
 function Internado() {
   const [nombre, setNombre] = useState("");
@@ -147,7 +147,7 @@ function Internado() {
       =================================== */}
 
       <div ref={reglasRef}>
-        <ReglasInternado />
+        <ReglasChedraui />
       </div>
 
       <BotonDescargar

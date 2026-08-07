@@ -1,339 +1,142 @@
-/* ================================
-   CONTENEDOR GENERAL
-================================ */
+/* ===========================
+   PERFIL DE TRABAJADOR
+   Diseño exclusivo para móvil
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  background: #111827;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
 }
 
-table.tabla-areli {
-  width: 360px;
-  max-width: 95%;
-  margin: 25px auto 10px auto;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: white;
-  border-radius: 18px;
+/* Tarjeta */
+
+.tabla-areli {
+  width: 94%;
+  margin: 16px auto;
+  border-collapse: collapse;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-  border: none;
+  background: #1b1f27;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* ================================
-   FOTO
-================================ */
+/* Foto */
 
 .photo-cell {
-  background: linear-gradient(135deg, #c40000, #ff3b3b);
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  padding: 24px 0;
   text-align: center;
-  padding: 25px;
 }
 
 .profile-photo {
-  width: 150px;
-  height: 150px;
-
-  object-fit: cover;
-
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-
-  border: 2px solid white;
-
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  object-fit: cover;
+  border: 4px solid #3b82f6;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
-/* ================================
-   DATOS
-================================ */
+/* Filas */
 
-.tabla-areli td {
-  padding: 12px 15px;
-
-  border-bottom: 1px solid #eee;
-
-  font-size: 15px;
+.tabla-areli tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.tabla-areli tr:last-child td {
+.tabla-areli tr:last-child {
   border-bottom: none;
 }
 
+.tabla-areli td {
+  padding: 14px 12px;
+  font-size: 15px;
+  vertical-align: top;
+}
+
+/* Títulos */
+
 .tabla-areli td:first-child {
   width: 42%;
-
-  background: #f7f7f7;
-
-  color: #333;
+  color: #60a5fa;
+  font-weight: 600;
+  background: #161b22;
 }
 
-.tabla-areli td:nth-child(2) {
-  font-weight: 500;
+/* Valores */
 
-  color: #222;
+.tabla-areli td:last-child {
+  color: #f3f4f6;
 }
 
-/* ================================
-   TELEFONO
-================================ */
+/* Teléfono */
 
 .phone-link {
-  color: #0b63ce;
-
+  color: #4ade80;
   text-decoration: none;
-
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.phone-link:hover {
-  text-decoration: underline;
+/* Botones */
+
+.acciones-contacto {
+  width: 94%;
+  display: flex;
+  justify-content: center;
 }
 
-/* ================================
-   BOTONES
-================================ */
+.btn-contacto {
+  
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 8px;
+}
+
+.btn-whatsapp {
+  border: 2px solid #3b82f6;
+  background: #000000;
+}
+
+.btn-share {
+  border: 2px solid #3b82f6;
+  background: #000000;
+}
+
+/* Iconos FontAwesome */
+
+.btn-contacto i {
+  font-size: 26px;
+}
+
+/* Botón Descargar */
 
 .button-descargar {
+  width: 94%;
+  margin: 20px auto;
   display: block;
-
-  margin: 15px auto;
-
-  padding: 12px 25px;
-
+  padding: 15px;
   border: none;
-
-  border-radius: 30px;
-
-  background: linear-gradient(135deg, #d00000, #ff4545);
-
-  color: white;
-
-  font-size: 15px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
-
-  transition: 0.3s;
+  border-radius: 14px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.button-descargar:hover {
-  transform: translateY(-3px);
-
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-}
-
-/* ================================
-   NOTIFICACION INTERNADO
-================================ */
-
-.contenedor-general {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  margin-top: 10px;
-}
-
-.notificacion-card {
-  width: 360px;
-
-  max-width: 92%;
-
-  background: white;
-
-  border-radius: 22px;
-
-  overflow: hidden;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.header-notificacion {
-  height: 60px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 20px;
-
-  background: linear-gradient(135deg, #9b0000, #ff3030);
-
-  color: white;
-
-  font-size: 23px;
-
-  font-weight: 900;
-
-  letter-spacing: 1px;
-}
-
-.icono-campana {
-  font-size: 25px;
-}
-
-.capsula-info {
-  display: flex;
-
-  align-items: center;
-
-  padding: 18px;
-
-  gap: 15px;
-}
-
-.foto-circular {
-  width: 75px;
-
-  height: 75px;
-
-  border-radius: 50%;
-
-  object-fit: cover;
-
-  border: 2px solid #d00000;
-}
-
-.texto-capsula {
-  flex: 1;
-}
-
-.empleado-nombre {
-  font-size: 17px;
-
-  font-weight: 900;
-
-  color: #222;
-}
-
-.empleado-puesto {
-  font-size: 14px;
-
-  color: #555;
-
-  margin-top: 5px;
-}
-
-.separador {
-  height: 2px;
-
-  background: #eee;
-}
-
-.fecha-aviso {
-  text-align: center;
-
-  font-size: 18px;
-
-  font-weight: bold;
-
-  color: #b00000;
-
-  padding: 1px;
-}
-
-.mensaje-aviso {
-  padding: 5px;
-
-  font-size: 15px;
-
-  line-height: 1.6;
-
-  color: #333;
-
-  text-align: justify;
-}
-
-.mensaje-aviso strong {
-  color: #a00000;
-}
-
-.copyright {
-  text-align: center;
-
-  padding: 12px;
-
-  background: #fafafa;
-
-  font-size: 12px;
-
-  color: #777;
-}
-
-/* ================================
-   EDITOR
-================================ */
-
-.editor-aviso {
-  margin-top: 20px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 10px;
-}
-
-.editor-aviso input {
-  width: 300px;
-
-  max-width: 90%;
-
-  padding: 12px;
-
-  border-radius: 12px;
-
-  border: 1px solid #ccc;
-
-  font-size: 15px;
-
-  outline: none;
-}
-
-.editor-aviso input:focus {
-  border-color: #d00000;
-
-  box-shadow: 0 0 5px rgba(208, 0, 0, 0.4);
-}
-
-/* ================================
-   CELULAR
-================================ */
-
-@media (max-width: 450px) {
-  table.tabla-areli {
-    width: 95%;
-  }
-
-  .tabla-areli td {
-    font-size: 14px;
-
-    padding: 10px;
-  }
-
-  .profile-photo {
-    width: 130px;
-
-    height: 130px;
-  }
-
-  .notificacion-card {
-    width: 95%;
-  }
-
-  .header-notificacion {
-    font-size: 19px;
-  }
-
-  .mensaje-aviso {
-    font-size: 14px;
-  }
+.button-descargar:active {
+  transform: scale(0.98);
 }
