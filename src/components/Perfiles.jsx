@@ -5,7 +5,7 @@ import "./Perfiles.css";
 import html2canvas from "html2canvas";
 
 import fotoareli from "/areli.png";
-import fotoivan from "/ivan.png";
+//import fotoivan from "/ivan.png";
 import fotouriel from "/uriel.png";
 import fotomarcos from "/marcos.png";
 import fotofernando from "/fernando.png";
@@ -13,7 +13,7 @@ import fotofernando from "/fernando.png";
 function Perfiles() {
   
   const tablaAreliRef = useRef(null);
-  const tablaIvanRef = useRef(null);
+  //const tablaIvanRef = useRef(null);
   const tablaUrielRef = useRef(null);
   const tablaMarcosRef = useRef(null);
   const tablaFernandoRef = useRef(null);
@@ -98,7 +98,7 @@ function Perfiles() {
       </div>
       <br></br>
 
-      <table className="tabla-areli" ref={tablaIvanRef}>
+      {/* <table className="tabla-areli" ref={tablaIvanRef}>
         <thead></thead>
         <tbody>
           <tr>
@@ -161,7 +161,7 @@ function Perfiles() {
           Descargar Perfil Ivan
         </button>
       </div>
-      <br></br>
+      <br></br> */}
 
       <table className="tabla-areli" ref={tablaUrielRef}>
         <thead></thead>

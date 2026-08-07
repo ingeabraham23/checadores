@@ -385,7 +385,7 @@ export const contactos = [
   {
     id: 60,
     nombre: "Pos 27 Filemon",
-    telefono: "231 113 6766",
+    telefono: "231 325 7440",
     foto: `${import.meta.env.BASE_URL}contactos/P27.png`,
   },
 
@@ -403,5 +403,193 @@ export const contactos = [
     foto: `${import.meta.env.BASE_URL}contactos/P47.png`,
   },
 
+  {
+    id: 63,
+    nombre: "Adan pos 39",
+    telefono: "231 176 2764",
+    foto: `${import.meta.env.BASE_URL}contactos/P39.png`,
+  },
+
+  {
+    id: 64,
+    nombre: "Aldo Pos 38",
+    telefono: "231 164 1978",
+    foto: `${import.meta.env.BASE_URL}contactos/P38.png`,
+  },
+
+  {
+    id: 65,
+    nombre: "Josue Pos",
+    telefono: "222 183 4352",
+    foto: `${import.meta.env.BASE_URL}contactos/josue.png`,
+  },
+
+  {
+    id: 80,
+    nombre: "Pocoyo",
+    telefono: "231 147 1805",
+    foto: `${import.meta.env.BASE_URL}contactos/pocoyo.png`,
+  },
+
+  {
+    id: 90,
+    nombre: "Refaccionaria francia",
+    telefono: "231 313 4310",
+    foto: `${import.meta.env.BASE_URL}contactos/francia.png`,
+  },
+
+  {
+    id: 91,
+    nombre: "El guerito Autopartes electricas",
+    telefono: "231 134 6416",
+    foto: `${import.meta.env.BASE_URL}contactos/guerito.png`,
+  },
+
+  {
+    id: 92,
+    nombre: "Mecanico zamora",
+    telefono: "231 174 2040",
+    foto: `${import.meta.env.BASE_URL}contactos/zamora.png`,
+  },
+
+  {
+    id: 93,
+    nombre: "Mecanico tavo portilla",
+    telefono: "231 319 2346",
+    foto: `${import.meta.env.BASE_URL}contactos/tavo.png`,
+  },
+
+  {
+    id: 94,
+    nombre: "Mecanico Chiquillo Fermin",
+    telefono: "231 164 6509",
+    foto: `${import.meta.env.BASE_URL}contactos/chiquillo.png`,
+  },
+
+  {
+    id: 95,
+    nombre: "Mecanico Poxco Agustin",
+    telefono: "231 132 8339",
+    foto: `${import.meta.env.BASE_URL}contactos/poxco.png`,
+  },
+
+  {
+    id: 96,
+    nombre: "Aron mecanico lopez",
+    telefono: "231 116 4637",
+    foto: `${import.meta.env.BASE_URL}contactos/aron.png`,
+  },
+  
+  {
+    id: 97,
+    nombre: "Hojalatero parada de sosa",
+    telefono: "231 166 5546",
+    foto: `${import.meta.env.BASE_URL}contactos/hsosa.png`,
+  },
+
+  {
+    id: 98,
+    nombre: "Hojalatero don marce",
+    telefono: "231 137 4341",
+    foto: `${import.meta.env.BASE_URL}contactos/hmarce.png`,
+  },
+
+  {
+    id: 99,
+    nombre: "Especialista en radiadores Pancho",
+    telefono: "231 106 6096",
+    foto: `${import.meta.env.BASE_URL}contactos/pancho.png`,
+  },
+
+  {
+    id: 110,
+    nombre: "Letreros don benito",
+    telefono: "231 206 5331",
+    foto: `${import.meta.env.BASE_URL}contactos/benito.png`,
+  },
+
+  {
+    id: 111,
+    nombre: "Letreros guera",
+    telefono: "231 100 7232",
+    foto: `${import.meta.env.BASE_URL}contactos/guera.png`,
+  },
+
+  {
+    id: 120,
+    nombre: "Comida doña juanita",
+    telefono: "231 128 2227",
+    foto: `${import.meta.env.BASE_URL}contactos/juanita.png`,
+  },
+
+  {
+    id: 121,
+    nombre: "Tortas los arcos",
+    telefono: "231 205 9392",
+    foto: `${import.meta.env.BASE_URL}contactos/tortas_arcos.png`,
+  },
+
+  {
+    id: 122,
+    nombre: "Pollos el indio chignautla",
+    telefono: "231 205 5939",
+    foto: `${import.meta.env.BASE_URL}contactos/indio_chignautla.png`,
+  },
+
+  {
+    id: 123,
+    nombre: "Pollos el indio Santa Juanita",
+    telefono: "231 205 5939",
+    foto: `${import.meta.env.BASE_URL}contactos/indio_juanita.png`,
+  },
+
+  {
+    id: 124,
+    nombre: "Tacos Mitzi",
+    telefono: "231 116 7640",
+    foto: `${import.meta.env.BASE_URL}contactos/mitzi.png`,
+  },
+
+  {
+    id: 125,
+    nombre: "Tacos de res chignautla",
+    telefono: "231 121 4163",
+    foto: `${import.meta.env.BASE_URL}contactos/res_chignautla.png`,
+  },
+
+  {
+    id: 126,
+    nombre: "Tacos don gera",
+    telefono: "231 311 6572",
+    foto: `${import.meta.env.BASE_URL}contactos/gera.png`,
+  },
+
+  {
+    id: 127,
+    nombre: "Pizzas angelotti chignautla",
+    telefono: "231 311 6889",
+    foto: `${import.meta.env.BASE_URL}contactos/angelotti_chignautla.png`,
+  },
+
+  {
+    id: 128,
+    nombre: "Comedor rojos luci",
+    telefono: "231 141 4734",
+    foto: `${import.meta.env.BASE_URL}contactos/calzonuda.png`,
+  },
+
+  {
+    id: 129,
+    nombre: "Tacos coahuixco abi",
+    telefono: "231 153 2677",
+    foto: `${import.meta.env.BASE_URL}contactos/abi.png`,
+  },
+
+  {
+    id: 140,
+    nombre: "Las aguilas imprenta",
+    telefono: "231 144 2817",
+    foto: `${import.meta.env.BASE_URL}contactos/aguilas.png`,
+  },
 
 ];
