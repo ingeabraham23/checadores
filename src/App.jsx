@@ -9,6 +9,8 @@ import Internado from "./components/Internado";
 import Empleo from "./components/Empleo";
 import Curso from "./components/Curso";
 import Directorio from "./components/Directorio";
+import NotificacionComision from "./components/NotificacionComision";
+import UbicacionesChecadores from "./components/UbicacionesChecadores";
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             <Route path="/empleo" element={<Empleo />} />
             <Route path="/curso" element={<Curso />} />
             <Route path="/directorio" element={<Directorio />} />
+            <Route path="/comision" element={<NotificacionComision />} />
+            <Route path="/fgrupo" element={<UbicacionesChecadores />} />
           </Routes>
         </div>
     </HashRouter>

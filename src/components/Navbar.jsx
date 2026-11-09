@@ -13,7 +13,8 @@ const navigationItems = [
   { path: '/empleo', icon: faBriefcase, label: 'Empleo' },
   { path: '/curso', icon: faPlay, label: 'Curso' },
   { path: '/directorio', icon: faAddressBook, label: 'Directorio' },
-
+  { path: '/comision', icon: faAddressBook, label: 'Directorio' },
+{ path: '/fgrupo', icon: faAddressBook, label: 'Grupo' },
 ];
 
 function Navbar() {

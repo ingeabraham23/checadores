@@ -1,0 +1,357 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.notificacion-pagina {
+  width: 100%;
+  min-height: 100vh;
+  padding: 8px 8px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #edf1f5;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* CARTEL */
+.notificacion-cartel {
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f8fafc;
+  color: #1e293b;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.12);
+}
+
+/* ENCABEZADO */
+.notificacion-encabezado {
+  padding: 11px 12px 12px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(145deg, #10243e, #1e4165);
+}
+
+.notificacion-icono {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  color: #f5cc76;
+  font-size: 15px;
+}
+
+.notificacion-etiqueta {
+  display: inline-block;
+  padding: 4px 9px;
+  border: 1px solid rgba(245, 204, 118, 0.6);
+  border-radius: 20px;
+  color: #f5cc76;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.notificacion-encabezado h1 {
+  margin: 7px 0 3px;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.notificacion-fecha {
+  margin-top: 8px;
+  padding: 6px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.notificacion-fecha svg {
+  flex-shrink: 0;
+  color: #f5cc76;
+}
+
+/* CONTENIDO */
+.notificacion-contenido {
+  padding: 9px 10px 8px;
+}
+
+.notificacion-introduccion {
+  margin: 0 0 9px;
+  color: #526174;
+  font-size: 9px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* SECCIONES */
+.notificacion-seccion {
+  margin-bottom: 8px;
+  padding: 8px 9px;
+  border: 1px solid #dce4ed;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.notificacion-seccion h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 7px;
+  color: #183451;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.notificacion-seccion h2 svg {
+  color: #b78b3d;
+  font-size: 12px;
+}
+
+/* TARIFAS */
+.notificacion-tarifas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.notificacion-tarifa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 4px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.notificacion-tarifa.obligatoria {
+  background: #edf3f9;
+  color: #183451;
+}
+
+.notificacion-tarifa.recomendada {
+  background: #fbf4e5;
+  color: #76551c;
+}
+
+.tarifa-etiqueta {
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.notificacion-tarifa strong {
+  margin: 2px 0 0;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.tarifa-pesos {
+  margin-top: 2px;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* PUNTOS DE CHECADO */
+.notificacion-puntos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.notificacion-punto {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0;
+  color: #334155;
+  font-size: 9px;
+}
+
+.notificacion-punto svg {
+  flex-shrink: 0;
+  color: #b78b3d;
+  font-size: 12px;
+}
+
+.notificacion-punto div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.notificacion-punto strong {
+  font-size: 9px;
+}
+
+.notificacion-punto span {
+  color: #64748b;
+  font-size: 8px;
+}
+
+.notificacion-puntos .notificacion-punto {
+  padding: 7px;
+  border-radius: 7px;
+  background: #f1f5f9;
+}
+
+/* CONTACTOS */
+.notificacion-contactos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.notificacion-contacto {
+  min-width: 0;
+  padding: 7px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f1f5f9;
+}
+
+.contacto-encabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 5px;
+}
+
+.contacto-encabezado strong {
+  color: #243c5a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.contacto-encabezado span {
+  color: #64748b;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.contacto-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.contacto-datos span {
+  color: #334155;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.contacto-datos strong {
+  color: #243c5a;
+  font-size: 10px;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+/* RECORDATORIO */
+.notificacion-recordatorio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: #eaf3ee;
+  color: #315a47;
+}
+
+.notificacion-recordatorio svg {
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.notificacion-recordatorio p {
+  margin: 0;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+/* PIE */
+.notificacion-pie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  background: #10243e;
+  color: #d5e1ee;
+  text-align: center;
+}
+
+.notificacion-copyright {
+  color: #f5cc76;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* BOTÓN */
+.notificacion-boton {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #183451;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notificacion-boton:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+/* PANTALLAS PEQUEÑAS */
+@media (max-width: 360px) {
+  .notificacion-encabezado h1 {
+    font-size: 21px;
+  }
+
+  .notificacion-contenido {
+    padding: 8px;
+  }
+
+  .notificacion-seccion {
+    padding: 7px;
+  }
+
+  .notificacion-tarifa strong {
+    font-size: 23px;
+  }
+
+  .contacto-datos strong {
+    font-size: 9px;
+  }
+}

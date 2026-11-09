@@ -15,7 +15,7 @@ const compartirNumero = async (telefono, nombre = "Contacto") => {
     try {
       await navigator.share({
         title: nombre,
-        text: `Teléfono: ${telefono}`,
+        text: `${nombre}: ${telefono}`,
       });
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ function Perfiles() {
 
   return (
     <div>
-      <table className="tabla-areli" ref={tablaAreliRef}>
+      {/* <table className="tabla-areli" ref={tablaAreliRef}>
         <thead></thead>
         <tbody>
           <tr>
@@ -133,7 +133,7 @@ function Perfiles() {
           {" "}
           Descargar Perfil Areli
         </button>
-      </div>
+      </div> */}
 
       
 
@@ -204,7 +204,7 @@ function Perfiles() {
       </div>
       <br></br> */}
 
-      <table className="tabla-areli" ref={tablaUrielRef}>
+      {/* <table className="tabla-areli" ref={tablaUrielRef}>
         <thead></thead>
         <tbody>
           <tr>
@@ -285,7 +285,7 @@ function Perfiles() {
           {" "}
           Descargar Perfil Uriel
         </button>
-      </div>
+      </div> */}
       <br></br>
 
       <table className="tabla-areli" ref={tablaMarcosRef}>
@@ -310,7 +310,7 @@ function Perfiles() {
             <td>
               <strong>Posición:</strong>
             </td>
-            <td>Checador Internado y Chedraui</td>
+            <td>Checador Internado</td>
           </tr>
           <tr>
             <td>
@@ -393,7 +393,7 @@ function Perfiles() {
             <td>
               <strong>Posición:</strong>
             </td>
-            <td>Checador Internado y Chedraui</td>
+            <td>Checador Chedraui</td>
           </tr>
           <tr>
             <td>
